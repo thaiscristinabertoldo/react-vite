@@ -1,16 +1,19 @@
 import { Container } from 'react-bootstrap';
+import { BrowserRouter } from 'react-router-dom';
 import { Footer, Header } from './components';
-import { Home } from './pages';
+import { Router } from './routes/Router';
 
 function App() {
   return (
-    <div className='d-flex flex-column justify-content-between min-vh-100 bg-light'>
-      <Header />
-      <Container as='main' className='my-5'>
-        <Home />
-      </Container>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className='d-flex flex-column justify-content-between min-vh-100 bg-light'>
+        <Header />
+        <Container as='main' className='my-5'>
+          <Router />
+        </Container>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
